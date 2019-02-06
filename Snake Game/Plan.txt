@@ -1,0 +1,26 @@
+﻿1. Grid Class
+	- Holds the grid 
+	- Holds the x,y values
+
+2. Snake Class
+	- length of the snake
+	- score
+	- x, y values
+
+3. Game Class
+	- Holds snake
+	- Holds timer
+	- Bates (Object that allow you to score)
+
+4. Game Logic Class
+	-Snake behaviour
+	-Collusion detection (kinda)
+	
+5. Form Elements
+	-Grid
+	-Bates (Scoring objects)
+	-Snake
+
+6. Collusion Dectection
+	-Part of game logic but going to be in a different class
+	

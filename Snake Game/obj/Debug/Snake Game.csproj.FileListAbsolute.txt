@@ -1,0 +1,22 @@
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\bin\Debug\Snake Game.exe.config
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\bin\Debug\Snake Game.exe
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\bin\Debug\Snake Game.pdb
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake Game.csprojAssemblyReference.cache
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake_Game.Form1.resources
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake_Game.Properties.Resources.resources
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake Game.csproj.GenerateResource.cache
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake Game.csproj.CoreCompileInputs.cache
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake Game.exe
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake Game.pdb
+C:\Users\lukee\Documents\School\Computing\Games\Snake Game\Snake Game\obj\Debug\Snake_Game.Form2.resources
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake Game.csprojAssemblyReference.cache
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake_Game.Form1.resources
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake_Game.Form2.resources
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake_Game.Properties.Resources.resources
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake Game.csproj.GenerateResource.cache
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake Game.csproj.CoreCompileInputs.cache
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake Game.exe
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\obj\Debug\Snake Game.pdb
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\bin\Debug\Snake Game.exe.config
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\bin\Debug\Snake Game.exe
+E:\Computer Science A-Level\year 1\Snake Game\Snake Game\bin\Debug\Snake Game.pdb
