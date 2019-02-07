@@ -27,7 +27,7 @@ namespace Snake_Game
             {
                 if (i == 0)
                 {
-                    this.Body.Add(new SnakePart(100,100));
+                    this.Body.Add(new SnakePart(500,500));
                 }
                 if(i > 0)
                 {

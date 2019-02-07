@@ -38,7 +38,19 @@ namespace Snake_Game
         private void GameTimerTick(object sender, EventArgs e)
         {
             DrawPlayer();
+            MoveSnake(30);
         }
+
+        private void MoveSnake(int inc)
+        {
+            for (int i = 0; i < MainSnake.Length; i++)
+            {
+                MainSnake.Body[i].Part = new Rectangle(MainSnake.Body[i].Part.X, MainSnake.Body[i].Y - inc, Settings.SnakeWidth, Settings.SnakeHeight);
+                Console.WriteLine("Number: {2}, X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Y, i);
+            }
+        }
+
+        
 
         private void GameControls(object sender, KeyEventArgs e)
         {
@@ -67,6 +79,7 @@ namespace Snake_Game
         {
             List<SnakePart> Body = MainSnake.Body;
             Graphics g = this.CreateGraphics();
+            g.Clear(Color.White);
             
             for(int i = 0; i<Body.Count; i++)
             {

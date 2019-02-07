@@ -5,9 +5,8 @@ namespace Snake_Game
     partial class Form1
     {
 
-        public Snake MainSnake;
         public Timer GameTimer;
-
+        public Snake MainSnake;
 
         /// <summary>
         /// Required designer variable.
@@ -37,9 +36,9 @@ namespace Snake_Game
         {
             this.SuspendLayout();
             new Settings();
-            MainSnake = new Snake();
             GameTimer = new Timer() { Interval = 1000 / Settings.Speed };
             GameTimer.Tick += new System.EventHandler(this.GameTimerTick);
+            MainSnake = new Snake();
             // 
             // Form1
             // 
