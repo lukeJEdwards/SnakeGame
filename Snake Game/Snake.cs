@@ -22,15 +22,17 @@ namespace Snake_Game
         private void SetUpBody()
         {
             Body = new List<SnakePart>();
+            SnakePart temp;
             for(int i = 0; i < Length; i++)
             {
                 if (i == 0)
                 {
-                    this.Body.Add(new SnakePart() { Name = "Head" });
+                    this.Body.Add(new SnakePart(100,100));
                 }
-                else
+                if(i > 0)
                 {
-                    this.Body.Add(new SnakePart() { Name = Convert.ToString(i)});
+                    temp = new SnakePart(Body[i - 1].X, Body[i - 1].Y + 30);
+                    Body.Add(temp);
                 }
             }
         }
@@ -38,7 +40,7 @@ namespace Snake_Game
         public void AddBodyPart()
         {
             Length++;
-            this.Body.Add(new SnakePart() { Name = Convert.ToString(Length) });
+            this.Body.Add(new SnakePart(Body[Length-2].X, Body[Length-2].Y + 30));
         }
 
     }

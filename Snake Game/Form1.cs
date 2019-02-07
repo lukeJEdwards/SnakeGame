@@ -12,9 +12,7 @@ namespace Snake_Game
 {
     public partial class Form1 : Form
     {
-        public Timer GameTimer;
         public Form ScoreForm;
-        public Snake MainSnake;
 
         public Form1()
         {
@@ -24,7 +22,7 @@ namespace Snake_Game
         private void Form1_Load(object sender, EventArgs e)
         {
             FormBorderStyle = FormBorderStyle.None;
-            MainSnake = new Snake();
+            GameTimer.Start();
         }
 
         private void Exit(object sender, KeyEventArgs e)
@@ -39,7 +37,7 @@ namespace Snake_Game
 
         private void GameTimerTick(object sender, EventArgs e)
         {
-           
+            DrawPlayer();
         }
 
         private void GameControls(object sender, KeyEventArgs e)
@@ -63,16 +61,17 @@ namespace Snake_Game
             {
                 Settings.SDirection = Settings.Direction.Down;
             }
-            Console.WriteLine(Settings.SDirection);
         }
 
-        private void DrawPlayer(object sender, PaintEventArgs e)
+        private void DrawPlayer()
         {
-            Graphics g = e.Graphics;
+            List<SnakePart> Body = MainSnake.Body;
+            Graphics g = this.CreateGraphics();
             
-
-
-
+            for(int i = 0; i<Body.Count; i++)
+            {
+                g.FillRectangle(Brushes.Black, Body[i].Part);
+            }
         }
 
     }

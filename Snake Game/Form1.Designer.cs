@@ -1,7 +1,14 @@
-﻿namespace Snake_Game
+﻿using System.Windows.Forms;
+
+namespace Snake_Game
 {
     partial class Form1
     {
+
+        public Snake MainSnake;
+        public Timer GameTimer;
+
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -30,6 +37,9 @@
         {
             this.SuspendLayout();
             new Settings();
+            MainSnake = new Snake();
+            GameTimer = new Timer() { Interval = 1000 / Settings.Speed };
+            GameTimer.Tick += new System.EventHandler(this.GameTimerTick);
             // 
             // Form1
             // 
@@ -41,11 +51,9 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawPlayer);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControls);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Exit);
             this.ResumeLayout(false);
-
         }
 
         #endregion

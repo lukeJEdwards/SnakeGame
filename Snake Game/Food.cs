@@ -7,13 +7,12 @@ namespace Snake_Game
     {
         public int ScoreIncrement { set; get; }
 
-        public Food()
+        public Food(int x, int y):base(x,y)
         {
             ScoreIncrement = 1;
-            X = 0;
-            Y = 0;
-            PartSize = new Size(Settings.SnakeWidth, Settings.SnakeHeight);
-            Part = new Rectangle(Location, PartSize);
+            X = x;
+            Y = y;
+            Part = new Rectangle(X, Y, Settings.SnakeWidth, Settings.SnakeHeight);
         }
 
         public static Food GenFood()
@@ -23,11 +22,7 @@ namespace Snake_Game
 
             Random random = new Random();
 
-            Food temp = new Food()
-            {
-                X = random.Next(0, MaxXPos),
-                Y = random.Next(0, MaxYPos)
-            };
+            Food temp = new Food(random.Next(0, MaxXPos), random.Next(0, MaxYPos));
             return temp;
 
         }

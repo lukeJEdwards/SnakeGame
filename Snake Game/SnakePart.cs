@@ -4,19 +4,15 @@ namespace Snake_Game
 {
     class SnakePart
     {
-        public string Name { get; set; }
-        public int X { set; get; }
-        public int Y { set; get; }
+        public int X;
+        public int Y;
         public Rectangle Part { set; get; }
-        public Size PartSize { set; get; }
-        public Point Location { set; get; }
 
-        public SnakePart()
+        public SnakePart(int x, int y)
         {
-            X = 0;
-            Y = 0;
-            PartSize = new Size(Settings.SnakeWidth, Settings.SnakeHeight);
-            Part = new Rectangle(Location, PartSize);
+            X = x;
+            Y = y;
+            Part = new Rectangle(X, Y, Settings.SnakeWidth, Settings.SnakeHeight);
         }
     }
 }
