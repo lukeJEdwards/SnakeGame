@@ -37,7 +37,14 @@ namespace Snake_Game
 
         private void GameTimerTick(object sender, EventArgs e)
         {
+            Console.WriteLine("X: {0}, Y: {1}", MainSnake.Body[0].X, MainSnake.Body[0].Y);
+            for(int i = 0; i < MainSnake.Length; i++)
+            {
+                Rectangle temp = new Rectangle(MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y + 20, Settings.SnakeWidth, Settings.SnakeHeight);
+                MainSnake.Body[i].Part = temp;
+            }
             DrawPlayer();
+            
         }
 
         private void GameControls(object sender, KeyEventArgs e)

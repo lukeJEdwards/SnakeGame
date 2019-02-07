@@ -30,3 +30,17 @@ C:\Users\lukee\Documents\GitHub\SnakeGame\Snake Game\obj\Debug\Snake Game.csproj
 C:\Users\lukee\Documents\GitHub\SnakeGame\Snake Game\obj\Debug\Snake Game.csproj.CoreCompileInputs.cache
 C:\Users\lukee\Documents\GitHub\SnakeGame\Snake Game\obj\Debug\Snake Game.exe
 C:\Users\lukee\Documents\GitHub\SnakeGame\Snake Game\obj\Debug\Snake Game.pdb
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\bin\Debug\Snake Game.exe.config
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\bin\Debug\Snake Game.exe
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\bin\Debug\Snake Game.pdb
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake Game.csprojAssemblyReference.cache
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake_Game.Form1.resources
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake_Game.Properties.Resources.resources
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake Game.csproj.GenerateResource.cache
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake Game.csproj.CoreCompileInputs.cache
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake Game.exe
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake Game.pdb
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\bin\Debug\Newtonsoft.Json.dll
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\bin\Debug\Newtonsoft.Json.pdb
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\bin\Debug\Newtonsoft.Json.xml
+E:\Computer Science A-Level\year 1\SnakeGame\Snake Game\obj\Debug\Snake Game.csproj.CopyComplete

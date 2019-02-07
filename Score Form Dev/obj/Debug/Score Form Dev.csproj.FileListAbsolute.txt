@@ -1,0 +1,14 @@
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Score Form Dev.exe.config
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Score Form Dev.exe
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Score Form Dev.pdb
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score Form Dev.csprojAssemblyReference.cache
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score_Form_Dev.Form1.resources
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score_Form_Dev.Properties.Resources.resources
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score Form Dev.csproj.GenerateResource.cache
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score Form Dev.csproj.CoreCompileInputs.cache
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score Form Dev.exe
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score Form Dev.pdb
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Newtonsoft.Json.dll
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Newtonsoft.Json.pdb
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Newtonsoft.Json.xml
+E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score Form Dev.csproj.CopyComplete

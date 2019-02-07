@@ -16,5 +16,19 @@ namespace Score_Form_Dev
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void Exit(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }
