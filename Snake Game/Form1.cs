@@ -22,6 +22,11 @@ namespace Snake_Game
         private void Form1_Load(object sender, EventArgs e)
         {
             FormBorderStyle = FormBorderStyle.None;
+            for(int i = 0; i <MainSnake.Length; i++)
+            {
+                Console.WriteLine("Number: {2}, X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y, i);
+            }
+            Console.WriteLine("------------------");
             GameTimer.Start();
         }
 
@@ -38,15 +43,39 @@ namespace Snake_Game
         private void GameTimerTick(object sender, EventArgs e)
         {
             DrawPlayer();
-            MoveSnake(30);
+            Console.WriteLine(Settings.SDirection);
+            if(Settings.SDirection == Settings.Direction.Up)
+            {
+                MoveSnake(0, -30);
+            }
+            if(Settings.SDirection == Settings.Direction.Down)
+            {
+                MoveSnake(0, 30);
+            }
+            if(Settings.SDirection == Settings.Direction.Right)
+            {
+                MoveSnake(30, 0);
+            }
+            if(Settings.SDirection == Settings.Direction.Left)
+            {
+                MoveSnake(-30, 0);
+            }
         }
 
-        private void MoveSnake(int inc)
+        private void MoveSnake(int x, int y)
         {
-            for (int i = 0; i < MainSnake.Length; i++)
+            for (int i = MainSnake.Length - 1; i > -1; i--)
             {
-                MainSnake.Body[i].Part = new Rectangle(MainSnake.Body[i].Part.X, MainSnake.Body[i].Y - inc, Settings.SnakeWidth, Settings.SnakeHeight);
-                Console.WriteLine("Number: {2}, X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Y, i);
+                if (i == 0)
+                {
+                    Console.WriteLine("X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
+                    MainSnake.Body[0].Part = new Rectangle(MainSnake.Body[0].Part.X + x, MainSnake.Body[i].Part.Y + y, Settings.SnakeWidth, Settings.SnakeHeight);
+                    Console.WriteLine("X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
+                }
+                else
+                {
+                    MainSnake.Body[i].Part = new Rectangle(MainSnake.Body[i - 1].Part.X, MainSnake.Body[i - 1].Part.Y, Settings.SnakeWidth, Settings.SnakeHeight);
+                }
             }
         }
 

@@ -15,7 +15,7 @@ namespace Snake_Game
         public Snake()
         {
             Score = 0;
-            Length = 5;
+            Length = 10;
             SetUpBody();
         }
 
@@ -27,7 +27,7 @@ namespace Snake_Game
             {
                 if (i == 0)
                 {
-                    this.Body.Add(new SnakePart(500,500));
+                    this.Body.Add(new SnakePart(400,400));
                 }
                 if(i > 0)
                 {
