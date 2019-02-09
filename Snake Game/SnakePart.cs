@@ -14,16 +14,5 @@ namespace Snake_Game
             Y = y;
             Part = new Rectangle(X, Y, Settings.SnakeWidth, Settings.SnakeHeight);
         }
-
-        public void ChangeRectangle(int x, int y, int width, int height)
-        {
-            Part = new Rectangle()
-            {
-                X = x,
-                Y = y, 
-                Width = width,
-                Height = height
-            };
-        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Windows.Forms;
 
 namespace Snake_Game
 {
@@ -27,17 +26,16 @@ namespace Snake_Game
 
         public Settings()
         {
-            MainFormSize = new Size(800, 800);
-            //MainFormSize = new Size(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height);
+            MainFormSize = new Size(895, 895);
             ScoreFormSize = new Size(MainFormSize.Width/2, MainFormSize.Height/2);
-            MainFormLocation = new Point(MainFormSize.Width,200);
+            MainFormLocation = new Point(100,100);
             ScoreFormLocaiton = new Point(MainFormSize.Width, 0);
 
-            SnakeWidth = 20;
-            SnakeHeight = 20;
+            SnakeWidth = 10;
+            SnakeHeight = 10;
             GameOver = false;
             Speed = 5;
-            SDirection = Direction.Up;
+            SDirection = Direction.Down;
         }
     }
 }

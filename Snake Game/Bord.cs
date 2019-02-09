@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace Snake_Game
 {
-    public partial class Form1 : Form
+    public partial class Bord : Form
     {
-        public Form ScoreForm;
 
-        public Form1()
+        public Bord()
         {
             InitializeComponent();
         }
@@ -22,11 +21,7 @@ namespace Snake_Game
         private void Form1_Load(object sender, EventArgs e)
         {
             FormBorderStyle = FormBorderStyle.None;
-            for(int i = 0; i <MainSnake.Length; i++)
-            {
-                Console.WriteLine("Number: {2}, X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y, i);
-            }
-            Console.WriteLine("------------------");
+            Console.WriteLine("X: {0}, Y: {1}", MainFood.Part.X, MainFood.Part.Y);
             GameTimer.Start();
         }
 
@@ -42,12 +37,16 @@ namespace Snake_Game
 
         private void GameTimerTick(object sender, EventArgs e)
         {
-            DrawPlayer();
-            MainSnake.CheckForCollisons();
-            GameOverCheck();
             if (!Settings.GameOver)
             {
                 MovingControls();
+            }
+            DrawPlayer();
+            MainSnake.CheckForCollisons();
+            GameOverCheck();
+            for(int i = 0; i < MainSnake.Length;i ++)
+            {
+                Console.WriteLine("Number: {0}, X: {1}, Y: {2}", i, MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
             }
         }
 
@@ -58,12 +57,13 @@ namespace Snake_Game
             {
                 GameTimer.Stop();
                 Console.WriteLine("Game Over");
+                Console.WriteLine(MainSnake.Score);
             }
         }
 
         private void MovingControls()
         {
-            const int inc = 30;
+            const int inc = 15;
             //Console.WriteLine(Settings.SDirection);
             if (Settings.SDirection == Settings.Direction.Up)
             {
@@ -92,7 +92,6 @@ namespace Snake_Game
                     MainSnake.Body[0].Part = new Rectangle(MainSnake.Body[0].Part.X + x, MainSnake.Body[0].Part.Y + y, Settings.SnakeWidth, Settings.SnakeHeight);
                     MainSnake.Body[0].X += x;
                     MainSnake.Body[0].Y += y;
-                    Console.WriteLine("Number: {0}, X: {1}, Y: {2}", 0, MainSnake.Body[0].X, MainSnake.Body[0].Y);
                 }
                 else
                 {
@@ -103,8 +102,6 @@ namespace Snake_Game
                //Console.WriteLine("X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
             }
         }
-
-        
 
         private void GameControls(object sender, KeyEventArgs e)
         {
@@ -134,11 +131,12 @@ namespace Snake_Game
             List<SnakePart> Body = MainSnake.Body;
             Graphics g = this.CreateGraphics();
             g.Clear(Color.White);
-            
-            for(int i = 0; i<Body.Count; i++)
+
+            for (int i = 0; i<Body.Count; i++)
             {
                 g.FillRectangle(Brushes.Black, Body[i].Part);
             }
+            g.FillRectangle(Brushes.Black, MainFood.Part);
         }
 
     }
