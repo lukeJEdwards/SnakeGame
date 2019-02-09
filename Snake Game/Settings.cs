@@ -21,7 +21,6 @@ namespace Snake_Game
 
         public static int SnakeWidth;
         public static int SnakeHeight;
-        public static int Length;
         public static bool GameOver;
         public static int Speed;
         public static Direction SDirection;
@@ -31,14 +30,14 @@ namespace Snake_Game
             MainFormSize = new Size(800, 800);
             //MainFormSize = new Size(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height);
             ScoreFormSize = new Size(MainFormSize.Width/2, MainFormSize.Height/2);
-            MainFormLocation = new Point(MainFormSize.Width,0);
+            MainFormLocation = new Point(MainFormSize.Width,200);
             ScoreFormLocaiton = new Point(MainFormSize.Width, 0);
 
             SnakeWidth = 20;
             SnakeHeight = 20;
             GameOver = false;
-            Speed = 2;
-            SDirection = Direction.Right;
+            Speed = 5;
+            SDirection = Direction.Up;
         }
     }
 }

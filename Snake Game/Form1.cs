@@ -43,22 +43,43 @@ namespace Snake_Game
         private void GameTimerTick(object sender, EventArgs e)
         {
             DrawPlayer();
-            Console.WriteLine(Settings.SDirection);
-            if(Settings.SDirection == Settings.Direction.Up)
+            MainSnake.CheckForCollisons();
+            GameOverCheck();
+            if (!Settings.GameOver)
             {
-                MoveSnake(0, -30);
+                MovingControls();
             }
-            if(Settings.SDirection == Settings.Direction.Down)
+        }
+
+        private void GameOverCheck()
+        {
+            Console.WriteLine("Game Over: {0}", Settings.GameOver);
+            if (Settings.GameOver)
             {
-                MoveSnake(0, 30);
+                GameTimer.Stop();
+                Console.WriteLine("Game Over");
             }
-            if(Settings.SDirection == Settings.Direction.Right)
+        }
+
+        private void MovingControls()
+        {
+            const int inc = 30;
+            //Console.WriteLine(Settings.SDirection);
+            if (Settings.SDirection == Settings.Direction.Up)
             {
-                MoveSnake(30, 0);
+                MoveSnake(0, -inc);
             }
-            if(Settings.SDirection == Settings.Direction.Left)
+            if (Settings.SDirection == Settings.Direction.Down)
             {
-                MoveSnake(-30, 0);
+                MoveSnake(0, inc);
+            }
+            if (Settings.SDirection == Settings.Direction.Right)
+            {
+                MoveSnake(inc, 0);
+            }
+            if (Settings.SDirection == Settings.Direction.Left)
+            {
+                MoveSnake(-inc, 0);
             }
         }
 
@@ -68,14 +89,18 @@ namespace Snake_Game
             {
                 if (i == 0)
                 {
-                    Console.WriteLine("X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
-                    MainSnake.Body[0].Part = new Rectangle(MainSnake.Body[0].Part.X + x, MainSnake.Body[i].Part.Y + y, Settings.SnakeWidth, Settings.SnakeHeight);
-                    Console.WriteLine("X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
+                    MainSnake.Body[0].Part = new Rectangle(MainSnake.Body[0].Part.X + x, MainSnake.Body[0].Part.Y + y, Settings.SnakeWidth, Settings.SnakeHeight);
+                    MainSnake.Body[0].X += x;
+                    MainSnake.Body[0].Y += y;
+                    Console.WriteLine("Number: {0}, X: {1}, Y: {2}", 0, MainSnake.Body[0].X, MainSnake.Body[0].Y);
                 }
                 else
                 {
                     MainSnake.Body[i].Part = new Rectangle(MainSnake.Body[i - 1].Part.X, MainSnake.Body[i - 1].Part.Y, Settings.SnakeWidth, Settings.SnakeHeight);
+                    MainSnake.Body[i].X = MainSnake.Body[i - 1].X;
+                    MainSnake.Body[i].Y = MainSnake.Body[i - 1].Y;
                 }
+               //Console.WriteLine("X: {0}, Y: {1}", MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
             }
         }
 

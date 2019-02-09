@@ -43,5 +43,32 @@ namespace Snake_Game
             this.Body.Add(new SnakePart(Body[Length-2].X, Body[Length-2].Y + 30));
         }
 
+        public void CheckForCollisons()
+        {
+            CheckWallCollisons();
+            for(int i = 1; i < Length; i++)
+            {
+                if (Body[0].Part.IntersectsWith(Body[i].Part))
+                {
+                    Settings.GameOver = true;
+                    Console.WriteLine("Collided with its self");
+                }
+            }
+        }
+
+        private void CheckWallCollisons()
+        {
+            if(Body[0].X < 0 || Body[0].X > Settings.MainFormSize.Width)
+            {
+                Settings.GameOver = true;
+                Console.WriteLine("Out of bounds (Width)");
+            }
+            if (Body[0].Y < 0 || Body[0].Y > Settings.MainFormSize.Height)
+            {
+                Settings.GameOver = true;
+                Console.WriteLine("Out of bounds (Height)");
+            }
+        }
+
     }
 }
