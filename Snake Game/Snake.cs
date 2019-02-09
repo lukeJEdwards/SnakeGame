@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snake_Game
 {
@@ -10,12 +7,13 @@ namespace Snake_Game
     {
         public int Score { set; get; }
         public int Length { set; get; }
+        private int Start = 0;
         internal List<SnakePart> Body { get; set; }
 
         public Snake()
         {
             Score = 0;
-            Length = 10;
+            Length = 1;
             SetUpBody();
         }
 
@@ -27,11 +25,11 @@ namespace Snake_Game
             {
                 if (i == 0)
                 {
-                    this.Body.Add(new SnakePart(400,400));
+                    this.Body.Add(new SnakePart(Start,Start));
                 }
                 if(i > 0)
                 {
-                    temp = new SnakePart(Body[i - 1].X, Body[i - 1].Y + 30);
+                    temp = new SnakePart(Body[i - 1].X, Body[i - 1].Y + 15);
                     Body.Add(temp);
                 }
             }
@@ -45,6 +43,7 @@ namespace Snake_Game
 
         public void CheckForCollisons()
         {
+            FoodCollision();
             CheckWallCollisons();
             for(int i = 1; i < Length; i++)
             {
@@ -58,15 +57,25 @@ namespace Snake_Game
 
         private void CheckWallCollisons()
         {
-            if(Body[0].X < 0 || Body[0].X > Settings.MainFormSize.Width)
+            if(Body[0].X < 0 || Body[0].X > Settings.MainFormSize.Width - Settings.SnakeWidth)
             {
                 Settings.GameOver = true;
                 Console.WriteLine("Out of bounds (Width)");
             }
-            if (Body[0].Y < 0 || Body[0].Y > Settings.MainFormSize.Height)
+            if (Body[0].Y < 0 || Body[0].Y > Settings.MainFormSize.Height - Settings.SnakeHeight)
             {
                 Settings.GameOver = true;
                 Console.WriteLine("Out of bounds (Height)");
+            }
+        }
+
+        private void FoodCollision()
+        {
+            if (Body[0].Part.IntersectsWith(Bord.MainFood.Part))
+            {
+                Score++;
+                Bord.MainFood.GenFood();
+                AddBodyPart();
             }
         }
 

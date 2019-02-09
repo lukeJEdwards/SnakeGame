@@ -2,16 +2,18 @@
 
 namespace Snake_Game
 {
-    partial class Form1
+    partial class Bord
     {
 
         public Timer GameTimer;
         public Snake MainSnake;
-
+        private static Food mainFood;
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        internal static Food MainFood { get => mainFood; set => mainFood = value; }
 
         /// <summary>
         /// Clean up any resources being used.
@@ -36,6 +38,7 @@ namespace Snake_Game
         {
             this.SuspendLayout();
             new Settings();
+            MainFood = new Food();
             GameTimer = new Timer() { Interval = 1000 / Settings.Speed };
             GameTimer.Tick += new System.EventHandler(this.GameTimerTick);
             MainSnake = new Snake();
