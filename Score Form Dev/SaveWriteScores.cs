@@ -27,6 +27,7 @@ namespace Score_Form_Dev
                 {
                     line = file.ReadToEnd();
                 }
+                Console.WriteLine(line);
                 this.HighScores = JsonConvert.DeserializeObject<ScoreItem[]>(line); 
             }catch(Exception e)
             {
@@ -68,7 +69,7 @@ namespace Score_Form_Dev
         public ScoreItem(string Name, int PlayerScore)
         {
             name = Name;
-            playerscore = playerscore;
+            playerscore = PlayerScore;
         }
     }
 }
