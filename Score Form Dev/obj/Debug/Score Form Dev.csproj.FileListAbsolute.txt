@@ -12,3 +12,17 @@ E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Newtonsoft
 E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Newtonsoft.Json.pdb
 E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\bin\Debug\Newtonsoft.Json.xml
 E:\Computer Science A-Level\year 1\SnakeGame\Score Form Dev\obj\Debug\Score Form Dev.csproj.CopyComplete
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\bin\Debug\Score Form Dev.exe.config
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\bin\Debug\Score Form Dev.exe
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\bin\Debug\Score Form Dev.pdb
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score Form Dev.csprojAssemblyReference.cache
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score_Form_Dev.Properties.Resources.resources
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score Form Dev.csproj.GenerateResource.cache
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score Form Dev.csproj.CoreCompileInputs.cache
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score Form Dev.csproj.CopyComplete
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score Form Dev.exe
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score Form Dev.pdb
+C:\Users\lukee\Documents\GitHub\SnakeGame - ScoreFormDev\Score Form Dev\obj\Debug\Score_Form_Dev.Score.resources

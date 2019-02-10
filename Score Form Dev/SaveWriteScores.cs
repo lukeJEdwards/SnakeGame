@@ -11,15 +11,15 @@ namespace Score_Form_Dev
     class SaveWriteScores
     {
 
-        public Score[] HighScores;
+        public ScoreItem[] HighScores;
         public SaveWriteScores()
         {
             HighScores = ReadHightScores();
         }
 
-        public Score[] ReadHightScores()
+        public ScoreItem[] ReadHightScores()
         {
-            this.HighScores = new Score[5];
+            this.HighScores = new ScoreItem[5];
             try
             {
                 string line = "";
@@ -27,7 +27,7 @@ namespace Score_Form_Dev
                 {
                     line = file.ReadToEnd();
                 }
-                this.HighScores = JsonConvert.DeserializeObject<Score[]>(line); 
+                this.HighScores = JsonConvert.DeserializeObject<ScoreItem[]>(line); 
             }catch(Exception e)
             {
                 Console.Write("File could not be read: ");
@@ -45,7 +45,7 @@ namespace Score_Form_Dev
             }
         }
 
-        public void CheckIfHigher(Score Current)
+        public void CheckIfHigher(ScoreItem Current)
         {
             for(int i = 0; i < HighScores.Length; i++)
             {
@@ -58,17 +58,15 @@ namespace Score_Form_Dev
 
     }
 
-    class Score
+    class ScoreItem
     {
-        public int place { set; get; }
         public string name { set; get; }
         public int playerscore { set; get; }
 
 
         [JsonConstructor]
-        public Score(int Place, string Name, int PlayerScore)
+        public ScoreItem(string Name, int PlayerScore)
         {
-            place = Place;
             name = Name;
             playerscore = playerscore;
         }

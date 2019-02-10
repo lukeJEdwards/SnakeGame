@@ -23,7 +23,6 @@ namespace Score_Form_Dev
 
         public static int SnakeWidth;
         public static int SnakeHeight;
-        public static int Length;
         public static bool GameOver;
         public static int Speed;
         public static Direction SDirection;
@@ -31,18 +30,17 @@ namespace Score_Form_Dev
         public Settings()
         {
 
-            MainFormSize = new Size(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height);
+            MainFormSize = new Size(895,895);
             ScoreFormSize = new Size(MainFormSize.Width/2, MainFormSize.Height/2);
-            MainFormLocation = new Point(0,0);
-            ScoreFormLocaiton = new Point(MainFormSize.Width + 10, 0);
+            MainFormLocation = new Point(100,100);
+            ScoreFormLocaiton = new Point(MainFormLocation.X + MainFormSize.Width + 10, MainFormLocation.Y);
 
-            ScoreFileLocation = "HighScore.json";
+            ScoreFileLocation = "HighScores.json";
 
             SnakeWidth = 20;
             SnakeHeight = 20;
-            Length = 0;
             GameOver = false;
-            Speed = 1000;
+            Speed = 5;
             SDirection = Direction.Down;
         }
     }

@@ -1,27 +1,22 @@
 [
 	{
-		"Place": 1,
-		"Name": "",
-		"PlayerScore": 0
+		"Name": "Name1",
+		"PlayerScore": 1000
 	},
-	{
-		"Place": 2,
-		"Name": "",
-		"PlayerScore": 0
-	},
-	{
-		"Place": 3,
-		"Name": "",
-		"PlayerScore": 0
-	},
-	{
-		"Place": 4,
-		"Name": "",
-		"PlayerScore": 0
-	},
-	{
-		"Place": 5,
-		"Name": "",
-		"PlayerScore": 0
-	}
+  {
+    "Name": "Name2",
+    "PlayerScore": 100
+  },
+  {
+    "Name": "Name3",
+    "PlayerScore": 10
+  },
+  {
+    "Name": "Name4",
+    "PlayerScore": 5
+  },
+  {
+    "Name": "Name5",
+    "PlayerScore": 1
+  }
 ]
