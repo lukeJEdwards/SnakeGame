@@ -58,3 +58,17 @@ C:\Users\lukee\Documents\GitHub\SnakeGame - Master\Snake Game\obj\Debug\Snake Ga
 C:\Users\lukee\Documents\GitHub\SnakeGame - Master\Snake Game\obj\Debug\Snake Game.exe
 C:\Users\lukee\Documents\GitHub\SnakeGame - Master\Snake Game\obj\Debug\Snake Game.pdb
 C:\Users\lukee\Documents\GitHub\SnakeGame - Master\Snake Game\obj\Debug\Snake_Game.Bord.resources
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\bin\Debug\Snake Game.exe.config
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\bin\Debug\Snake Game.exe
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\bin\Debug\Snake Game.pdb
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake Game.csprojAssemblyReference.cache
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake_Game.Bord.resources
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake_Game.Properties.Resources.resources
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake Game.csproj.GenerateResource.cache
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake Game.csproj.CoreCompileInputs.cache
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake Game.csproj.CopyComplete
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake Game.exe
+C:\Users\lukee\Documents\GitHub\SnakeGame- master\Snake Game\obj\Debug\Snake Game.pdb

@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-
+using System.Drawing.Text;
 namespace Snake_Game
 {
     partial class Bord
@@ -8,6 +8,10 @@ namespace Snake_Game
         public Timer GameTimer;
         public Snake MainSnake;
         private static Food mainFood;
+        public Form LeaderBoard;
+        public PrivateFontCollection pfc;
+        private SaveWriteScores FileHandling;
+        private ScoreItem PlayerScore;
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -38,7 +42,12 @@ namespace Snake_Game
         {
             this.SuspendLayout();
             new Settings();
-            MainFood = new Food();
+            PlayerScore = new ScoreItem();
+            pfc = new PrivateFontCollection();
+            pfc.AddFontFile(Settings.FontFile);
+            FileHandling = new SaveWriteScores();
+            LeaderBoard = new Form();
+            mainFood = new Food();
             GameTimer = new Timer() { Interval = 1000 / Settings.Speed };
             GameTimer.Tick += new System.EventHandler(this.GameTimerTick);
             MainSnake = new Snake();

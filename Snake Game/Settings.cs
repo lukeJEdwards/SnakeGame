@@ -18,6 +18,9 @@ namespace Snake_Game
         public static Point MainFormLocation;
         public static Point ScoreFormLocaiton;
 
+        public static string ScoreFileLocation;
+        public static string FontFile;
+
         public static int SnakeWidth;
         public static int SnakeHeight;
         public static bool GameOver;
@@ -29,7 +32,10 @@ namespace Snake_Game
             MainFormSize = new Size(895, 895);
             ScoreFormSize = new Size(MainFormSize.Width/2, MainFormSize.Height/2);
             MainFormLocation = new Point(100,100);
-            ScoreFormLocaiton = new Point(MainFormSize.Width, 0);
+            ScoreFormLocaiton = new Point(MainFormLocation.X + MainFormSize.Width + 10, MainFormLocation.Y);
+
+            ScoreFileLocation = "HighScores.json";
+            FontFile = "8-BIT WONDER.ttf";
 
             SnakeWidth = 10;
             SnakeHeight = 10;

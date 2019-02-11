@@ -21,20 +21,76 @@ namespace Snake_Game
         private void Form1_Load(object sender, EventArgs e)
         {
             FormBorderStyle = FormBorderStyle.None;
-            Console.WriteLine("X: {0}, Y: {1}", MainFood.Part.X, MainFood.Part.Y);
-            GameTimer.Start();
+            LeaderBoardSetup();
+            LeaderBoard.Show();
+            GameStartUp();
+            //GameTimer.Start();
         }
 
+        //start of the game
+        private void GameStartUp()
+        {
+            Label Namelabel = new Label()
+            {
+                Name = "NameLabel",
+                AutoSize = true,
+                Text = "Enter Name",
+                Font = new Font(pfc.Families[0], 16, FontStyle.Bold),
+                BackColor = this.BackColor,
+                ForeColor = Color.Black
+            };
+            Namelabel.Location = new Point(this.Width / 2 - Namelabel.Width, this.Height / 4);
+            this.Controls.Add(Namelabel);
+
+            TextBox PlayerName = new TextBox()
+            {
+                Name = "Players Name",
+                AcceptsTab = true,
+                Multiline = false,
+                AcceptsReturn = false,
+                WordWrap = true,
+                Text = "Joe Doe",
+                TextAlign = HorizontalAlignment.Center,
+                Font = new Font(pfc.Families[0], 16, FontStyle.Bold),
+                BorderStyle = BorderStyle.None,
+            };
+            PlayerName.Location = new Point(this.Width / 2 - PlayerName.Width/2, this.Height / 2 - PlayerName.Height);
+            PlayerName.TextChanged += new EventHandler(TextBoxTextChanged);
+            PlayerName.KeyDown += new KeyEventHandler(this.Exit);
+            PlayerName.KeyDown += new KeyEventHandler(this.SetName);
+            this.Controls.Add(PlayerName);
+        }
+
+        private void SetName(object sender, KeyEventArgs e)
+        {
+            TextBox playername = sender as TextBox;
+            if(e.KeyCode == Keys.Enter)
+            {
+                PlayerScore.name = playername.Text;
+                Console.WriteLine(playername.Text);
+            }
+        }
+
+        private void TextBoxTextChanged(object sender, EventArgs e)
+        {
+            TextBox playername = sender as TextBox;
+            Size size = TextRenderer.MeasureText(playername.Text, playername.Font);
+            playername.Width = size.Width;
+            playername.Height = size.Height;
+            playername.Location = new Point(this.Width / 2 - playername.Width/2, this.Height / 2 - playername.Height);
+        }
+
+        //Force Exit
         private void Exit(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Escape)
             {
                 this.Close();
-                //ScoreForm.Close();
+                LeaderBoard.Close();
             }
         }
 
-
+        //GameTick
         private void GameTimerTick(object sender, EventArgs e)
         {
             if (!Settings.GameOver)
@@ -44,15 +100,11 @@ namespace Snake_Game
             DrawPlayer();
             MainSnake.CheckForCollisons();
             GameOverCheck();
-            for(int i = 0; i < MainSnake.Length;i ++)
-            {
-                Console.WriteLine("Number: {0}, X: {1}, Y: {2}", i, MainSnake.Body[i].Part.X, MainSnake.Body[i].Part.Y);
-            }
         }
 
+        //cheack everyframe for the game over bool
         private void GameOverCheck()
         {
-            Console.WriteLine("Game Over: {0}", Settings.GameOver);
             if (Settings.GameOver)
             {
                 GameTimer.Stop();
@@ -61,6 +113,7 @@ namespace Snake_Game
             }
         }
 
+        //sendes the increment of the snake every frame
         private void MovingControls()
         {
             const int inc = 15;
@@ -83,6 +136,7 @@ namespace Snake_Game
             }
         }
 
+        //goes through the whole snake and updates body part location
         private void MoveSnake(int x, int y)
         {
             for (int i = MainSnake.Length - 1; i > -1; i--)
@@ -103,6 +157,7 @@ namespace Snake_Game
             }
         }
 
+        //makes sure you cann't go back on yourself
         private void GameControls(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Right && Settings.SDirection != Settings.Direction.Left)
@@ -126,6 +181,7 @@ namespace Snake_Game
             }
         }
 
+        //draws everything to the screen
         private void DrawPlayer()
         {
             List<SnakePart> Body = MainSnake.Body;
@@ -137,6 +193,57 @@ namespace Snake_Game
                 g.FillRectangle(Brushes.Black, Body[i].Part);
             }
             g.FillRectangle(Brushes.Black, MainFood.Part);
+        }
+
+
+        //LeaderBoard
+
+        private void LeaderBoardSetup()
+        {
+            LeaderBoard.KeyDown += new KeyEventHandler(this.Exit);
+            LeaderBoard.StartPosition = FormStartPosition.Manual;
+            LeaderBoard.FormBorderStyle = FormBorderStyle.None;
+            LeaderBoard.Size = Settings.ScoreFormSize;
+            LeaderBoard.Location = Settings.ScoreFormLocaiton;
+            LeaderBoard.ShowInTaskbar = false;
+            ScoreLabels();
+        }
+
+        private void ScoreLabels()
+        {
+            Label temp;
+            Label ScoreLabel = new Label()
+            {
+                Name = "ScoreLabel",
+                AutoSize = true,
+                Font = new Font(pfc.Families[0], 16, FontStyle.Bold),
+                Text = "Score: 00",
+                Visible = true,
+                BorderStyle = BorderStyle.None,
+                BackColor = this.BackColor,
+                ForeColor = Color.Black,
+                Location = new Point(0, 0)
+            };
+            LeaderBoard.Controls.Add(ScoreLabel);
+
+            int j = 1;
+            for(int i = 0; i < FileHandling.HighScores.Length; i++)
+            {
+                temp = new Label()
+                {
+                    Name = Convert.ToString(i),
+                    AutoSize = true,
+                    Font = new Font(pfc.Families[0], 16, FontStyle.Regular),
+                    Text = FileHandling.HighScores[i].name + ": " + Convert.ToString(FileHandling.HighScores[i].playerscore),
+                    Visible = true,
+                    BorderStyle = BorderStyle.None,
+                    BackColor = this.BackColor,
+                    ForeColor = Color.Black,
+                    Location = new Point(0, j * (Settings.ScoreFormSize.Height / 6))
+                };
+                j++;
+                LeaderBoard.Controls.Add(temp);
+            }
         }
 
     }
