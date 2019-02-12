@@ -10,8 +10,10 @@ namespace Snake_Game
         private static Food mainFood;
         public Form LeaderBoard;
         public PrivateFontCollection pfc;
-        private SaveWriteScores FileHandling;
-        private ScoreItem PlayerScore;
+        public SaveWriteScores FileHandling;
+        public static ScoreItem PlayerScore;
+        public static Label ScoreLabel;
+        private Label[] HighScoreLabels;
         /// <summary>
         /// Required designer variable.
         /// </summary>

@@ -40,7 +40,7 @@ namespace Snake_Game
             SnakeWidth = 10;
             SnakeHeight = 10;
             GameOver = false;
-            Speed = 5;
+            Speed = 8;
             SDirection = Direction.Down;
         }
     }

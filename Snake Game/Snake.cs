@@ -73,7 +73,8 @@ namespace Snake_Game
         {
             if (Body[0].Part.IntersectsWith(Bord.MainFood.Part))
             {
-                Score++;
+                Bord.PlayerScore.playerscore++;
+                Bord.ScoreLabel.Text = "Score: " + Bord.PlayerScore.playerscore.ToString();
                 Bord.MainFood.GenFood();
                 AddBodyPart();
             }

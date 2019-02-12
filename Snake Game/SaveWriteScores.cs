@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Snake_Game
 {
-    class SaveWriteScores
+    public class SaveWriteScores
     {
 
         public ScoreItem[] HighScores;
@@ -47,22 +47,10 @@ namespace Snake_Game
             }
         }
 
-        //checks if the player is in the top five, places in correct postion 
-        public void CheckIfHigher(ScoreItem Current)
-        {
-            for(int i = 0; i < HighScores.Length; i++)
-            {
-                if(this.HighScores[i].playerscore < Current.playerscore)
-                {
-                    this.HighScores[i] = Current;
-                }
-            }
-        }
-
     }
 
     //score object
-    class ScoreItem
+    public class ScoreItem
     {
         public string name { set; get; }
         public int playerscore { set; get; }

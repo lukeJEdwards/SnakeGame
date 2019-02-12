@@ -24,7 +24,6 @@ namespace Snake_Game
             LeaderBoardSetup();
             LeaderBoard.Show();
             GameStartUp();
-            //GameTimer.Start();
         }
 
         //start of the game
@@ -49,7 +48,8 @@ namespace Snake_Game
                 Multiline = false,
                 AcceptsReturn = false,
                 WordWrap = true,
-                Text = "Joe Doe",
+                BackColor = Color.Black,
+                ForeColor = Color.White,
                 TextAlign = HorizontalAlignment.Center,
                 Font = new Font(pfc.Families[0], 16, FontStyle.Bold),
                 BorderStyle = BorderStyle.None,
@@ -68,6 +68,10 @@ namespace Snake_Game
             {
                 PlayerScore.name = playername.Text;
                 Console.WriteLine(playername.Text);
+                this.Controls.Remove(playername);
+                this.Controls.Remove(this.Controls.Find("NameLabel", true)[0]);
+                playername.Dispose();
+                GameTimer.Start();
             }
         }
 
@@ -212,7 +216,7 @@ namespace Snake_Game
         private void ScoreLabels()
         {
             Label temp;
-            Label ScoreLabel = new Label()
+            ScoreLabel = new Label()
             {
                 Name = "ScoreLabel",
                 AutoSize = true,
@@ -224,9 +228,11 @@ namespace Snake_Game
                 ForeColor = Color.Black,
                 Location = new Point(0, 0)
             };
+            ScoreLabel.TextChanged += new EventHandler(CheckLeaderBoard);
             LeaderBoard.Controls.Add(ScoreLabel);
 
             int j = 1;
+            HighScoreLabels = new Label[5];
             for(int i = 0; i < FileHandling.HighScores.Length; i++)
             {
                 temp = new Label()
@@ -242,8 +248,40 @@ namespace Snake_Game
                     Location = new Point(0, j * (Settings.ScoreFormSize.Height / 6))
                 };
                 j++;
+                HighScoreLabels[i] = temp;
                 LeaderBoard.Controls.Add(temp);
             }
+        }
+
+        private void CheckLeaderBoard(object sender, EventArgs e)
+        {
+            int scoreIndex = -1;
+            for (int i = FileHandling.HighScores.Length -1 ; i > -1; i--)
+            {
+                if (FileHandling.HighScores[i].playerscore < PlayerScore.playerscore)
+                {
+                    scoreIndex = i;
+                }
+            }
+
+            if(scoreIndex == 4)
+            {
+                FileHandling.HighScores[4] = PlayerScore;
+                HighScoreLabels[4].Text = PlayerScore.name + ": " + PlayerScore.playerscore.ToString();
+                HighScoreLabels[4].ForeColor = Color.BlueViolet;
+            }
+            if(scoreIndex < 4 && scoreIndex > -1)
+            {
+                ScoreItem temp = FileHandling.HighScores[scoreIndex];
+                FileHandling.HighScores[scoreIndex] = PlayerScore;
+                FileHandling.HighScores[scoreIndex + 1] = temp;
+                HighScoreLabels[scoreIndex].Text = FileHandling.HighScores[scoreIndex].name + ": " + FileHandling.HighScores[scoreIndex].playerscore.ToString();
+                HighScoreLabels[scoreIndex].ForeColor = Color.BlueViolet;
+                HighScoreLabels[scoreIndex + 1].Text = FileHandling.HighScores[scoreIndex + 1].name + "; " + FileHandling.HighScores[scoreIndex + 1].playerscore.ToString();
+                HighScoreLabels[scoreIndex + 1].ForeColor = Color.Black;
+            }
+
+
         }
 
     }
